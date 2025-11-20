@@ -7,18 +7,18 @@ This is a single-page portfolio website designed with a clean, professional dark
 
 Technologies Used
 
-HTML5 - Semantic markup
-Tailwind CSS - Utility-first CSS framework for modern styling
-JavaScript - Vanilla JavaScript for interactivity
+HTML5 - Semantic markup||
+Tailwind CSS - Utility-first CSS framework for modern styling||
+JavaScript - Vanilla JavaScript for interactivity||
 
 
 Features
 
-Responsive Design - Works seamlessly on desktop, tablet, and mobile devices
-Modern UI - Clean dark theme with gradient accents and smooth animations
-Smooth Scrolling - Navigate between sections with smooth scroll behavior
-Active Navigation - Automatically highlights the current section in the navigation bar
-Mobile Menu - Off-canvas hamburger menu for mobile devices
-Resume Integration - Download and view your resume directly from the portfolio
-Social Links - Easy access to email, LinkedIn, and GitHub profiles
+Responsive Design - Works seamlessly on desktop, tablet, and mobile devices||
+Modern UI - Clean dark theme with gradient accents and smooth animation||
+Smooth Scrolling - Navigate between sections with smooth scroll behavior||
+Active Navigation - Automatically highlights the current section in the navigation bar||
+Mobile Menu - Off-canvas hamburger menu for mobile devices||
+Resume Integration - Download and view your resume directly from the portfolio||
+Social Links - Easy access to email, LinkedIn, and GitHub profile||
 Accessible - Built with semantic HTML and ARIA labels for better accessibility
