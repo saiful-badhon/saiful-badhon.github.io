@@ -1,27 +1,26 @@
-// Mobile hamburger menu (vanilla JS)
+// Mobile hamburger menu
 const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('site-nav');
+const mobileNav = document.getElementById('mobile-nav');
 
-if (hamburger && nav) {
+if (hamburger && mobileNav) {
   hamburger.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    mobileNav.classList.toggle('hidden');
+    const isOpen = !mobileNav.classList.contains('hidden');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
   // Close nav on link click (mobile)
-  nav.querySelectorAll('a').forEach(a => {
+  mobileNav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
-      if (nav.classList.contains('open')) {
-        nav.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
+      mobileNav.classList.add('hidden');
+      hamburger.setAttribute('aria-expanded', 'false');
     });
   });
 }
 
 // Active link highlighting while scrolling
 const sections = document.querySelectorAll('main .section[id]');
-const navLinks = document.querySelectorAll('#site-nav a');
+const navLinks = document.querySelectorAll('.nav-link');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -47,7 +46,7 @@ const resumeFileInput = document.getElementById('resumeFile');
 
 function fileName() {
   const val = resumeFileInput?.value?.trim();
-  return val || 'resume.pdf';
+  return val || 'resume- data.pdf';
 }
 
 downloadBtn?.addEventListener('click', () => {
