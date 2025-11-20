@@ -1,60 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Saiful Islam Badhon – Portfolio</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#7c9cff',
+            secondary: '#64ffda',
+            dark: '#0b0c10',
+            surface: '#111218',
+            card: '#161823',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
+  
   <meta name="description" content="Portfolio of Saiful Islam Badhon – About, Experience, Projects, Skills, Education, Resume, and Contact." />
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Home">Saiful<span>Dev</span></a>
+<body class="text-gray-200 font-sans bg-dark">
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-dark/85 border-b border-gray-800">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#top" class="brand text-xl font-bold hover:scale-105 transition-transform">
+        Saiful<span class="text-secondary">Dev</span>
+      </a>
+      
+      <!-- Desktop Nav -->
+      <div id="site-nav" class="hidden md:flex gap-6">
+        <a href="#about" class="nav-link px-4 py-2 rounded-lg hover:bg-card transition-all">About</a>
+        <a href="#experience" class="nav-link px-4 py-2 rounded-lg hover:bg-card transition-all">Experience</a>
+        <a href="#projects" class="nav-link px-4 py-2 rounded-lg hover:bg-card transition-all">Projects</a>
+        <a href="#skills" class="nav-link px-4 py-2 rounded-lg hover:bg-card transition-all">Skills</a>
+        <a href="#education" class="nav-link px-4 py-2 rounded-lg hover:bg-card transition-all">Education</a>
+        <a href="#resume" class="nav-link px-4 py-2 rounded-lg hover:bg-card transition-all">Resume</a>
+        <a href="#contact" class="nav-link px-4 py-2 rounded-lg hover:bg-card transition-all">Contact</a>
+      </div>
 
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-    </button>
-
-    <nav id="site-nav" class="site-nav" aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
+      <!-- Mobile Menu Button -->
+      <button id="hamburger" class="hamburger md:hidden p-2 rounded-lg border border-gray-800 bg-surface hover:bg-card transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </nav>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-nav" class="mobile-nav hidden md:hidden px-6 pb-4 space-y-2">
+      <a href="#about" class="block px-4 py-2 rounded-lg hover:bg-card transition-colors">About</a>
+      <a href="#experience" class="block px-4 py-2 rounded-lg hover:bg-card transition-colors">Experience</a>
+      <a href="#projects" class="block px-4 py-2 rounded-lg hover:bg-card transition-colors">Projects</a>
+      <a href="#skills" class="block px-4 py-2 rounded-lg hover:bg-card transition-colors">Skills</a>
+      <a href="#education" class="block px-4 py-2 rounded-lg hover:bg-card transition-colors">Education</a>
+      <a href="#resume" class="block px-4 py-2 rounded-lg hover:bg-card transition-colors">Resume</a>
+      <a href="#contact" class="block px-4 py-2 rounded-lg hover:bg-card transition-colors">Contact</a>
+    </div>
   </header>
 
   <main id="top">
-    <!-- ABOUT / HERO -->
-    <section class="section hero" id="about" aria-label="About me">
-      <div class="hero-media">
-        <img src="IMG_4915.jpg" alt="Saiful Islam Badhon portrait" class="avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <!-- HERO / ABOUT -->
+    <section id="about" class="section max-w-6xl mx-auto px-6 py-20 md:py-32">
+      <div class="hero grid md:grid-cols-[240px_1fr] gap-12 items-center">
+        <div class="hero-media mx-auto md:mx-0">
+          <img src="IMG_4915.jpg" alt="Saiful Islam Badhon" 
+               class="avatar w-48 h-48 md:w-60 md:h-60 rounded-3xl border-2 border-primary object-cover" />
         </div>
-      </div>
-      <div class="hero-content">
-        <h1>Hi, I'm <span class="accent">Saiful Islam Badhon</span>.</h1>
-        <p class="lead">🇧🇩 🇺🇸 I'm Saiful, a senior at CSUEB, majoring in Computer Science. I'm building a strong foundation in programming, algorithms, and software development, and I'm passionate about leveraging technology to solve real-world problems.</p>
-        <p class="lead">I'm currently honing my skills in languages like Python, Java, C++, SAS, SQL, and R and exploring data structures, machine learning, and data analysis. I'm always eager to learn new technologies, collaborate on innovative projects, and connect with others in the tech community.</p>
-        <p class="lead">📩 Feel free to contact me with potential opportunities, queries, or if you want to connect with me.</p>
-        <div class="hero-cta">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="#resume">Get Resume</a>
+
+        <div class="hero-content text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Hi, I'm <span class="gradient-text">Saiful Islam Badhon</span>.
+          </h1>
+          <p class="text-gray-400 text-lg mb-4">
+            🇧🇩 🇺🇸 I'm Saiful, a senior at CSUEB, majoring in Computer Science. I'm building a strong foundation in programming, algorithms, and software development, and I'm passionate about leveraging technology to solve real-world problems.
+          </p>
+          <p class="text-gray-400 text-lg mb-4">
+            I'm currently honing my skills in languages like Python, Java, C++, SAS, SQL, and R and exploring data structures, machine learning, and data analysis. I'm always eager to learn new technologies, collaborate on innovative projects, and connect with others in the tech community.
+          </p>
+          <p class="text-gray-400 text-lg mb-8">
+            📩 Feel free to contact me with potential opportunities, queries, or if you want to connect with me.
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+            <a href="#projects" class="btn-primary px-6 py-3 rounded-xl font-semibold">
+              View Projects
+            </a>
+            <a href="#resume" class="btn-secondary px-6 py-3 rounded-xl font-semibold border border-gray-700">
+              Get Resume
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section class="section" id="experience" aria-label="Experience">
-      <h2>Experience</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Research Assistant – Computer Science Department</h3>
-          <p class="meta">California State University, East Bay · Aug 2025 – Present · Hayward, CA</p>
-          <ul>
+    <section id="experience" class="section max-w-6xl mx-auto px-6 py-20">
+      <h2 class="section-title text-4xl font-bold mb-12">Experience</h2>
+      <div class="space-y-6">
+        <article class="card bg-card border border-gray-800 rounded-2xl p-6">
+          <h3 class="text-2xl font-semibold text-secondary mb-2">Research Assistant – Computer Science Department</h3>
+          <p class="text-gray-400 mb-4">California State University, East Bay · Aug 2025 – Present · Hayward, CA</p>
+          <ul class="list-disc list-inside text-gray-300 space-y-2">
             <li>Conducting research on graph-based fraud detection in banking systems modeled as hypernetworks.</li>
             <li>Designed and implemented Graph Neural Network (GNN) models to detect anomalies in large-scale financial transaction data.</li>
             <li>Developed pipelines for graph construction, feature extraction, and anomaly detection, improving detection accuracy compared to baselines.</li>
@@ -65,88 +119,118 @@
     </section>
 
     <!-- PROJECTS -->
-    <section class="section" id="projects" aria-label="Projects">
-      <h2>Projects</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>CSUEB Bank Web Application</h3>
-          <p>Full-stack banking app with secure auth, account management, and transaction processing with history logging.</p>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bootstrap</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>EJS</span></div>
+    <section id="projects" class="section max-w-6xl mx-auto px-6 py-20">
+      <h2 class="section-title text-4xl font-bold mb-12">Projects</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="card bg-card border border-gray-800 rounded-2xl p-6">
+          <h3 class="text-xl font-semibold text-secondary mb-3">CSUEB Bank Web Application</h3>
+          <p class="text-gray-300 mb-4">Full-stack banking app with secure auth, account management, and transaction processing with history logging.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag px-3 py-1 text-sm rounded-full">HTML</span>
+            <span class="tag px-3 py-1 text-sm rounded-full">CSS</span>
+            <span class="tag px-3 py-1 text-sm rounded-full">JavaScript</span>
+            <span class="tag px-3 py-1 text-sm rounded-full">Node.js</span>
+            <span class="tag px-3 py-1 text-sm rounded-full">PostgreSQL</span>
+          </div>
         </article>
-        <article class="card">
-          <h3>Image Classification</h3>
-          <p>High-accuracy image classifier using deep learning; dataset curation and preprocessing with Python; model training with TensorFlow/PyTorch and OpenCV for vision utilities.</p>
-          <div class="tags"><span>Python</span><span>TensorFlow</span><span>PyTorch</span><span>OpenCV</span><span>ML</span></div>
+
+        <article class="card bg-card border border-gray-800 rounded-2xl p-6">
+          <h3 class="text-xl font-semibold text-secondary mb-3">Image Classification</h3>
+          <p class="text-gray-300 mb-4">High-accuracy image classifier using deep learning; dataset curation and preprocessing with Python; model training with TensorFlow/PyTorch and OpenCV for vision utilities.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag px-3 py-1 text-sm rounded-full">Python</span>
+            <span class="tag px-3 py-1 text-sm rounded-full">TensorFlow</span>
+            <span class="tag px-3 py-1 text-sm rounded-full">PyTorch</span>
+            <span class="tag px-3 py-1 text-sm rounded-full">OpenCV</span>
+          </div>
         </article>
-        <article class="card">
-          <h3>Wage Comparison</h3>
-          <p>Kaggle dataset analysis to compare wages across sectors (2000–present) by demographics, union status, gender, and education; presented results to 50+ students.</p>
-          <div class="tags"><span>SAS</span><span>Data Analysis</span><span>PowerPoint</span></div>
+
+        <article class="card bg-card border border-gray-800 rounded-2xl p-6">
+          <h3 class="text-xl font-semibold text-secondary mb-3">Wage Comparison</h3>
+          <p class="text-gray-300 mb-4">Kaggle dataset analysis to compare wages across sectors (2000–present) by demographics, union status, gender, and education; presented results to 50+ students.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag px-3 py-1 text-sm rounded-full">SAS</span>
+            <span class="tag px-3 py-1 text-sm rounded-full">Data Analysis</span>
+          </div>
         </article>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section class="section" id="skills" aria-label="Skills">
-      <h2>Skills</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Technical</h3>
-          <p>Python, C++, Java, R, SQL, SAS, Data Structures, Tableau, NumPy, SciPy, Scikit-learn, Power BI, Excel, TensorFlow, OpenCV, Matplotlib, Seaborn, AWS, Google Cloud, Data Visualization, Data Cleaning, GitHub, KNN, Machine Learning, ETL Tools, MS Office Suite, Statistical Analysis, Data Management</p>
+    <section id="skills" class="section max-w-6xl mx-auto px-6 py-20">
+      <h2 class="section-title text-4xl font-bold mb-12">Skills</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="card bg-card border border-gray-800 rounded-2xl p-6">
+          <h3 class="text-2xl font-semibold text-secondary mb-4">Technical</h3>
+          <p class="text-gray-300 leading-relaxed">Python, C++, Java, R, SQL, SAS, Data Structures, Tableau, NumPy, SciPy, Scikit-learn, Power BI, Excel, TensorFlow, OpenCV, Matplotlib, Seaborn, AWS, Google Cloud, Data Visualization, Data Cleaning, GitHub, KNN, Machine Learning, ETL Tools, MS Office Suite, Statistical Analysis, Data Management</p>
         </article>
-        <article class="card">
-          <h3>Additional</h3>
-          <p>Leadership, Teamwork, Communication, Problem-solving, Collaboration, Project Management, Public Speaking, Time Management, Decision-making, Adaptability, Critical Thinking</p>
+
+        <article class="card bg-card border border-gray-800 rounded-2xl p-6">
+          <h3 class="text-2xl font-semibold text-secondary mb-4">Additional</h3>
+          <p class="text-gray-300 leading-relaxed">Leadership, Teamwork, Communication, Problem-solving, Collaboration, Project Management, Public Speaking, Time Management, Decision-making, Adaptability, Critical Thinking</p>
         </article>
       </div>
     </section>
 
     <!-- EDUCATION -->
-    <section class="section" id="education" aria-label="Education">
-      <h2>Education</h2>
-      <ul class="timeline">
-        <li>
-          <h3>B.S. in Computer Science – California State University, East Bay</h3>
-          <p class="meta">Expected Graduation: December 2025 · GPA: 3.808</p>
-          <p>Relevant coursework: Data Structures, Calculus I & II, Cyber Security, Software Engineering, Mobile Programming, Web Development, Programming Language Concepts, Automata & Computation, Computer Networks, Database Architecture, Operating Systems, Intro to Statistics, Assembly Language, Discrete Mathematics</p>
-        </li>
-      </ul>
+    <section id="education" class="section max-w-6xl mx-auto px-6 py-20">
+      <h2 class="section-title text-4xl font-bold mb-12">Education</h2>
+      <article class="card bg-card border-l-4 border-primary rounded-2xl p-6">
+        <h3 class="text-2xl font-semibold text-secondary mb-2">B.S. in Computer Science – California State University, East Bay</h3>
+        <p class="text-gray-400 mb-4">Expected Graduation: December 2025 · GPA: 3.808</p>
+        <p class="text-gray-300 leading-relaxed">Relevant coursework: Data Structures, Calculus I & II, Cyber Security, Software Engineering, Mobile Programming, Web Development, Programming Language Concepts, Automata & Computation, Computer Networks, Database Architecture, Operating Systems, Intro to Statistics, Assembly Language, Discrete Mathematics</p>
+      </article>
     </section>
 
     <!-- RESUME -->
-    <section class="section" id="resume" aria-label="Resume">
-      <h2>Resume</h2>
-      <p>Download or view my resume below.</p>
-      <div class="resume-box">
-        <input id="resumeFile" type="text" value="resume- data.pdf" placeholder="resume- data.pdf" aria-label="Resume file name" />
-        <button class="btn" id="downloadResume">Download Resume</button>
-        <a id="viewResume" class="btn outline" href="resume- data.pdf" target="_blank" rel="noopener">View Resume</a>
+    <section id="resume" class="section max-w-6xl mx-auto px-6 py-20">
+      <h2 class="section-title text-4xl font-bold mb-12">Resume</h2>
+      <div class="bg-card border border-gray-800 rounded-2xl p-8 max-w-2xl">
+        <p class="text-gray-300 mb-6">Download or view my resume below.</p>
+        <div class="flex flex-wrap gap-4">
+          <input id="resumeFile" type="text" value="resume- data.pdf" 
+                 class="flex-1 min-w-[200px] px-4 py-3 bg-surface border border-gray-700 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
+          <button id="downloadResume" class="btn-primary px-6 py-3 rounded-lg font-semibold">
+            Download
+          </button>
+          <a id="viewResume" href="resume- data.pdf" target="_blank" class="btn-secondary px-6 py-3 rounded-lg font-semibold border border-gray-700 flex items-center">
+            View Resume
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section" id="contact" aria-label="Contact">
-      <h2>Contact</h2>
-      <p>Hayward, CA · 814-844-8692 · mdsaifulbadhon2002@gmail.com</p>
-      <div class="socials">
-        <a class="icon-link" href="mailto:mdsaifulbadhon2002@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v.511l-10 6.25-10-6.25V6Zm0 2.489V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.489l-9.386 5.862a2 2 0 0 1-2.229 0L2 8.489Z"></path></svg>
+    <section id="contact" class="section max-w-6xl mx-auto px-6 py-20">
+      <h2 class="section-title text-4xl font-bold mb-12">Contact</h2>
+      <p class="text-gray-300 text-lg mb-8">Hayward, CA · 814-844-8692 · mdsaifulbadhon2002@gmail.com</p>
+      <div class="socials flex flex-wrap gap-4">
+        <a href="mailto:mdsaifulbadhon2002@gmail.com" class="social-link flex items-center gap-3 px-6 py-3 bg-card border border-gray-800 rounded-xl">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v.511l-10 6.25-10-6.25V6Zm0 2.489V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.489l-9.386 5.862a2 2 0 0 1-2.229 0L2 8.489Z"></path>
+          </svg>
           <span>Email</span>
         </a>
-        <a class="icon-link" href="https://www.linkedin.com/in/saifulislambadhon" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1-.002 5.002A2.5 2.5 0 0 1 4.98 3.5ZM3 9h4v12H3V9Zm7 0h3.82v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.66 4.78 6.12V21h-4v-5.36c0-1.28-.02-2.93-1.79-2.93-1.79 0-2.06 1.4-2.06 2.84V21h-4V9Z"></path></svg>
+
+        <a href="https://www.linkedin.com/in/saifulislambadhon" target="_blank" class="social-link flex items-center gap-3 px-6 py-3 bg-card border border-gray-800 rounded-xl">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M4.98 3.5a2.5 2.5 0 1 1-.002 5.002A2.5 2.5 0 0 1 4.98 3.5ZM3 9h4v12H3V9Zm7 0h3.82v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.66 4.78 6.12V21h-4v-5.36c0-1.28-.02-2.93-1.79-2.93-1.79 0-2.06 1.4-2.06 2.84V21h-4V9Z"></path>
+          </svg>
           <span>LinkedIn</span>
         </a>
-        <a class="icon-link" href="https://github.com/saiful-badhon" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+
+        <a href="https://github.com/saiful-badhon" target="_blank" class="social-link flex items-center gap-3 px-6 py-3 bg-card border border-gray-800 rounded-xl">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path>
+          </svg>
           <span>GitHub</span>
         </a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Saiful Islam Badhon. Built with vanilla HTML/CSS/JS.</p>
+  <footer class="border-t border-gray-800 bg-dark/60 py-8 mt-20">
+    <p class="text-center text-gray-400">© <span id="year"></span> Saiful Islam Badhon. Built with HTML, CSS, JavaScript & Tailwind CSS.</p>
   </footer>
 
   <script src="script.js"></script>
